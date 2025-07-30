@@ -1,0 +1,15 @@
+@import "tailwindcss";
+body {
+  @apply bg-[#F8F4E1];
+}
+
+@font-face {
+  font-family: catboo;
+  src: url('./assets/fonts/Catboo.ttf');
+}
+
+@theme {
+  --color-primary:#AF8F6F;
+  --color-secondary: #0000;
+  --font-cat: catboo;
+}
