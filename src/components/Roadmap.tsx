@@ -8,13 +8,12 @@ interface RoadmapPhaseProps {
 }
 
 const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ phase, title, items }) => (
-  <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-[#AF8F6F]">
-    <h3 className="text-xl font-bold text-[#543310]">{phase}</h3>
-    <p className="text-lg text-gray-700 mb-4">{title}</p>
-    <ul className="space-y-2">
+  <div className="text-center">
+    <h3 className="text-5xl font-bold text-[#543310]">{phase}</h3>
+    <p className="text-4xl text-gray-700 mb-4">{title}</p>
+    <ul className="space-y-2 *:text-3xl">
       {items.map((item, index) => (
         <li key={index} className="flex items-center">
-          <span className="text-green-500 mr-2">✓</span>
           {item}
         </li>
       ))}
@@ -25,8 +24,8 @@ const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ phase, title, items }) => (
 const Roadmap: React.FC = () => {
   return (
     <section id="roadmap" className="py-20 bg-[#F8F4E1]">
-       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#543310] mb-12">
+       <div className="container mx-auto px-50">
+        <h2 className="text-3xl md:text-5xl font-bold text-center text-[#543310] mb-12 ">
           Meng Adventure Roadmap
         </h2>
         
@@ -34,17 +33,17 @@ const Roadmap: React.FC = () => {
           <RoadmapPhase 
             phase="Phase 1"
             title="Kitten"
-            items={['Website & Social Media Launch', 'Fair Launch on Raydium', 'Building an Initial Community', 'CoinGecko & CMC Listing']}
+            items={['500k mcap , feeding street cats']}
           />
           <RoadmapPhase 
             phase="Phase 2"
             title="Adolescent Cat"
-            items={['1,000+ Holders', 'Influencer Campaign', 'Community Meme Contest', 'Trending on Twitter & DexScreener']}
+            items={['1M mcap , dev lock']}
           />
           <RoadmapPhase 
             phase="Phase 3"
             title="King Cat"
-            items={['10,000+ Holders', 'CEX Listings', 'Merchandise Meng!', 'Crypto World Domination']}
+            items={['2M mcap , lets community drive']}
           />
         </div>
       </div>

@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
       />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mt-8 text-3xl">
+      <div className="flex flex-wrap justify-center gap-4 mt-8 text-5xl -mb-20">
         <a
           href="#howtobuy"
           className="bg-[#543310] text-white font-bold py-3 px-8 rounded-full hover:bg-[#744717] transition-colors duration-300 "

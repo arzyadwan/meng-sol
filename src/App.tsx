@@ -1,8 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import WhyMeng from "./components/WhyMeng";
-
+/*import WhyMeng from "./components/WhyMeng";*/
 import HowToBuy from "./components/HowToBuy";
 import Roadmap from "./components/Roadmap";
 import Footer from "./components/Footer";
@@ -32,9 +31,9 @@ function App() {
       {/* 3. Konten utama dimulai seperti biasa */}
       <main>
         <About />
-        <WhyMeng />
-        <HowToBuy />
+        {/*<WhyMeng />*/}
         <Roadmap />
+        <HowToBuy />
       </main>
 
       <Footer />

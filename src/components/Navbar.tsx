@@ -14,13 +14,13 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white/80 backdrop-blur-md shadow-md w-[80%] mx-auto mt-5 rounded-4xl">
-      <div className="container mx-auto px-15 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-10 py-3 flex justify-between items-center">
         <a
           href="#home"
-          className="text-2xl font-bold text-[#543310] flex items-center gap-3"
+          className="text-5xl text-[#543310] flex items-center gap-7"
         >
           <img src={logoMeng} className="w-14 h-auto" />
-          Meng sol
+          Meng
         </a>
 
         {/* Desktop Menu */}
