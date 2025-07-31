@@ -1,27 +1,42 @@
-// src/App.tsx
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import WhyMeng from './components/WhyMeng';
-import Tokenomics from './components/Tokenomics';
-import HowToBuy from './components/HowToBuy';
-import Roadmap from './components/Roadmap';
-import Footer from './components/Footer';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import WhyMeng from "./components/WhyMeng";
+
+import HowToBuy from "./components/HowToBuy";
+import Roadmap from "./components/Roadmap";
+import Footer from "./components/Footer";
+import BannerImage from "./assets/background.png";
 
 function App() {
+  const headerBackgroundStyle = {
+    backgroundImage: `url(${BannerImage})`,
+  };
+
   return (
-    <div className="font-cat tracking-widest text-gray-800"> {/* Ganti dengan warna background utama */}
-      <div className='sticky top-0 z-50 pt-4 px-4'>
-      <Navbar />
+    <div className="font-cat tracking-widest text-gray-800 bg-[#F8F4E1]"> {/* Beri warna dasar di sini */}
+      
+      {/* 1. Wrapper Navbar sekarang di luar dan menjadi sticky untuk seluruh halaman */}
+      <div className="sticky top-0 z-50 pt-4 px-4">
+        <Navbar />
       </div>
-      <main>
+
+      {/* 2. Div ini HANYA untuk background Hero */}
+      <div
+        className="relative bg-cover bg-center -mt-[120px]" // Tarik ke atas untuk berada di belakang navbar
+        style={headerBackgroundStyle}
+      >
         <Hero />
+      </div>
+
+      {/* 3. Konten utama dimulai seperti biasa */}
+      <main>
         <About />
         <WhyMeng />
-        <Tokenomics />
         <HowToBuy />
         <Roadmap />
       </main>
+
       <Footer />
     </div>
   );

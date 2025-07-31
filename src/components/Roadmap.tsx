@@ -24,27 +24,27 @@ const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ phase, title, items }) => (
 
 const Roadmap: React.FC = () => {
   return (
-    <section id="roadmap" className="py-20 bg-white">
+    <section id="roadmap" className="py-20 bg-[#F8F4E1]">
        <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#543310] mb-12">
-          Peta Jalan Petualangan Meng
+          Meng Adventure Roadmap
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <RoadmapPhase 
-            phase="Fase 1"
-            title="Anak Kucing"
-            items={['Peluncuran Website & Medsos', 'Fair Launch di Raydium', 'Bangun Komunitas Awal', 'Listing CoinGecko & CMC']}
+            phase="Phase 1"
+            title="Kitten"
+            items={['Website & Social Media Launch', 'Fair Launch on Raydium', 'Building an Initial Community', 'CoinGecko & CMC Listing']}
           />
           <RoadmapPhase 
-            phase="Fase 2"
-            title="Kucing Remaja"
-            items={['1.000+ Holders', 'Kampanye Influencer', 'Kontes Meme Komunitas', 'Trending di Twitter & DexScreener']}
+            phase="Phase 2"
+            title="Adolescent Cat"
+            items={['1,000+ Holders', 'Influencer Campaign', 'Community Meme Contest', 'Trending on Twitter & DexScreener']}
           />
           <RoadmapPhase 
-            phase="Fase 3"
-            title="Raja Kucing"
-            items={['10.000+ Holders', 'CEX Listings', 'Merchandise Meng!', 'Dominasi Dunia Kripto']}
+            phase="Phase 3"
+            title="King Cat"
+            items={['10,000+ Holders', 'CEX Listings', 'Merchandise Meng!', 'Crypto World Domination']}
           />
         </div>
       </div>

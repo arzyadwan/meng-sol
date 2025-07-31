@@ -1,7 +1,8 @@
 // src/components/HowToBuy.tsx
-import React from 'react';
-import { FaWallet, FaExchangeAlt } from 'react-icons/fa'; // Menggunakan ikon ETH sebagai representasi kripto umum
-import { SiSolana } from 'react-icons/si';
+import React from "react";
+import { FaWallet, FaExchangeAlt } from "react-icons/fa"; // Menggunakan ikon ETH sebagai representasi kripto umum
+import { SiSolana } from "react-icons/si";
+import mengpaw from "../assets/meng-paw.png";
 
 // Sub-komponen untuk setiap langkah
 interface StepCardProps {
@@ -11,7 +12,12 @@ interface StepCardProps {
   description: string;
 }
 
-const StepCard: React.FC<StepCardProps> = ({ step, icon, title, description }) => (
+const StepCard: React.FC<StepCardProps> = ({
+  step,
+  icon,
+  title,
+  description,
+}) => (
   <div className="relative pl-12">
     <div className="absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full bg-[#AF8F6F] text-white font-bold text-xl">
       {step}
@@ -26,40 +32,49 @@ const StepCard: React.FC<StepCardProps> = ({ step, icon, title, description }) =
   </div>
 );
 
-
 const HowToBuy: React.FC = () => {
   return (
-    <section id="howtobuy" className="py-20 bg-[#F8F4E1]">
+    <section id="howtobuy" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#543310] mb-12">
+        <h2 className="text-8xl md:text-4xl font-bold text-center text-[#543310] mb-12">
           Dapatkan $MENG dalam 4 Langkah!
         </h2>
-        
+
         <div className="max-w-2xl mx-auto grid grid-cols-1 gap-10">
-          <StepCard 
-            step={1}
-            icon={<FaWallet />}
-            title="Siapkan Dompet Solana"
-            description="Download dompet seperti Phantom atau Solflare dari App Store atau Google Play. Buat dompet baru dan amankan seed phrase Anda."
-          />
-          <StepCard 
-            step={2}
-            icon={<SiSolana />}
-            title="Isi dengan SOL"
-            description="Beli Solana (SOL) di bursa favoritmu (seperti Binance, Coinbase, atau Tokocrypto) lalu kirim ke alamat dompet Solana Anda."
-          />
-          <StepCard 
-            step={3}
-            icon={<FaExchangeAlt />}
-            title="Buka Jupiter / Raydium"
-            description="Buka browser di dalam dompet Anda, lalu kunjungi platform DEX seperti Jupiter (jup.ag) atau Raydium. Hubungkan dompet Anda."
-          />
-           <StepCard 
-            step={4}
-            icon={<img src="/favicon.ico" alt="Meng Icon" className="w-6 h-6"/>} // Ganti dengan logo Meng Anda
-            title="Tukar SOL dengan $MENG"
-            description="Tempelkan alamat kontrak $MENG, pilih jumlah SOL yang ingin ditukar, dan klik 'Swap'. Selamat datang di Pasukan Meng!"
-          />
+          <div className="border-4 border-[#543310] p-2 shadow-2xl rounded-2xl">
+            <StepCard
+              step={1}
+              icon={<FaWallet />}
+              title="Set up your Wallet"
+              description="Download a wallet like Phantom or Solflare from the App Store or Google Play. Create a new wallet and secure your seed phrase."
+            />
+          </div>
+          <div className="border-4 border-[#543310] p-2 shadow-2xl rounded-2xl">
+            <StepCard
+              step={2}
+              icon={<SiSolana />}
+              title="Fill With SOL"
+              description="Buy Solana (SOL) on your favorite exchange (like Binance, Coinbase, or Tokocrypto) and send it to your Solana wallet address."
+            />
+          </div>
+          <div className="border-4 border-[#543310] p-2 shadow-2xl rounded-2xl">
+            <StepCard
+              step={3}
+              icon={<FaExchangeAlt />}
+              title="Open Jupiter / Raydium"
+              description="Open a browser within your wallet, then visit a DEX platform like Jupiter (jup.ag) or Raydium. Connect your wallet."
+            />
+          </div>
+          <div className="border-4 border-[#543310] p-2 shadow-2xl rounded-2xl">
+            <StepCard
+              step={4}
+              icon={
+                <img src={mengpaw} alt="Meng Icon" className="w-7 h-auto" />
+              } // Ganti dengan logo Meng Anda
+              title="Exchange SOL for $MENG"
+              description="Paste the $MENG contract address, select the amount of SOL you want to swap, and click 'Swap'. Welcome to the Meng Army!"
+            />
+          </div>
         </div>
       </div>
     </section>

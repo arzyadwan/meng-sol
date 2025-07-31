@@ -25,24 +25,24 @@ const WhyMeng: React.FC = () => {
     <section id="why" className="py-20 bg-[#F8F4E1]"> {/* Warna background utama */}
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#543310] mb-12">
-          Mengapa Bergabung dengan Pasukan Meng?
+          Why Join Meng's Squad?
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <FeatureCard 
             icon={<FaCat />}
-            title="Kekuatan Meme Kucing"
-            description="Kucing menguasai internet. $MENG adalah raja dari semua meme kucing, siap menjadi viral dan dicintai semua orang."
+            title="The Power of Cat Memes"
+            description="Cats rule the internet. $MENG is the king of all cat memes, ready to go viral and be loved by everyone."
           />
           <FeatureCard 
             icon={<FaRocket />}
-            title="Cepat & Murah di Solana"
-            description="Dibangun di atas Solana, transaksi $MENG secepat Meng mengejar laser dan biayanya sangat murah."
+            title="Fast & Cheap on Solana"
+            description="Built on Solana, $MENG transactions are as fast as Meng chasing a laser and the fees are incredibly low. "
           />
           <FeatureCard 
             icon={<FaLock />}
-            title="Aman & Terpercaya"
-            description="Likuiditas dikunci (LP Locked) dan kontrak dilepaskan (Renounced). Tidur nyenyak seperti Meng, tanpa khawatir 'rug pull'."
+            title="Safe & Trusted"
+            description="Liquidity is locked (LP Locked) and the contract is released (Renounced). Sleep soundly like Meng, without worrying about 'rug pulls'."
           />
         </div>
       </div>
