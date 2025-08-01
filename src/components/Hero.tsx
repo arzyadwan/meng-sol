@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCopy } from "react-icons/fa";
+import { easeIn, motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   const contractAddress = "SoL123abc...YourMengContractAddress...xyz789";
@@ -54,7 +55,11 @@ const Hero: React.FC = () => {
           Join Telegram
       </div>
         </a>*/}
-      <div className="flex flex-col mt-150 gap-2">
+      <motion.div className="flex flex-col mt-150 gap-2"
+      initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: easeIn }}
+          viewport={{ once: false }}>
         <div className="text-3xl text-white font-bold text-shadow-md text-shadow-black">Contract Addres</div>
         <div className="bg-white p-3 rounded-full flex items-center shadow-2xl bottom-0 mb-20">
           <p className="text-sm md:text-base text-gray-600 font-bold break-all px-4">
@@ -67,7 +72,7 @@ const Hero: React.FC = () => {
             {copied ? "Copied!" : <FaCopy />}
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
