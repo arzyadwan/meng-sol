@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           <a
             href="#howtobuy"
             onClick={() => setIsOpen(false)}
-            className="block mt-2 bg-[#AF8F6F] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-[#543310] transition-colors"
+            className="block bg-[#AF8F6F] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-[#543310] transition-colors"
           >
             Buy Now
           </a>

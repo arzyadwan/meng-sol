@@ -5,7 +5,7 @@ import About from "./components/About";
 import HowToBuy from "./components/HowToBuy";
 import Roadmap from "./components/Roadmap";
 import Footer from "./components/Footer";
-import BannerImage from "./assets/background.png";
+import BannerImage from "./assets/background-meng.webp";
 
 function App() {
   const headerBackgroundStyle = {

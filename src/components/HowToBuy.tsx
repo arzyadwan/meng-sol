@@ -37,7 +37,7 @@ const HowToBuy: React.FC = () => {
     <section id="howtobuy" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <h2 className="text-8xl md:text-4xl font-bold text-center text-[#543310] mb-12">
-          Dapatkan $MENG dalam 4 Langkah!
+          Earn $MENG in 4 Steps!
         </h2>
 
         <div className="max-w-2xl mx-auto grid grid-cols-1 gap-10">
