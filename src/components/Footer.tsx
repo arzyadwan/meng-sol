@@ -1,10 +1,16 @@
 // src/components/Footer.tsx
 import React from 'react';
-import { FaTwitter, FaTelegramPlane } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#543310] text-white py-12">
+    <motion.div className="bg-[#543310] text-white py-12"
+    initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+          >
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">
           Join the Meng Gang!
@@ -14,10 +20,7 @@ const Footer: React.FC = () => {
         </p>
         <div className="flex justify-center gap-6 mb-10">
           <a href="https://twitter.com/YourMengCoin" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-sky-400 transition-colors">
-            <FaTwitter />
-          </a>
-          <a href="https://t.me/yourtelegramgroup" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-blue-500 transition-colors">
-            <FaTelegramPlane />
+            <FaXTwitter />
           </a>
         </div>
         
@@ -30,7 +33,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.div>
   );
 };
 

@@ -16,13 +16,13 @@ function App() {
     <div className="font-cat tracking-widest text-gray-800 bg-[#F8F4E1]"> {/* Beri warna dasar di sini */}
       
       {/* 1. Wrapper Navbar sekarang di luar dan menjadi sticky untuk seluruh halaman */}
-      <div className="sticky top-0 z-50 pt-4 px-4">
+      <div className="hidden md:block sticky top-0 z-50 pt-4 px-4">
         <Navbar />
       </div>
 
       {/* 2. Div ini HANYA untuk background Hero */}
       <div
-        className="relative bg-cover bg-center -mt-[120px]" // Tarik ke atas untuk berada di belakang navbar
+        className="relative bg-cover bg-center -mt-[120px] top-0" // Tarik ke atas untuk berada di belakang navbar
         style={headerBackgroundStyle}
       >
         <Hero />

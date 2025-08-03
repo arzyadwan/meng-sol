@@ -1,75 +1,67 @@
+// src/components/Hero.tsx
 import React, { useState } from "react";
 import { FaCopy } from "react-icons/fa";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
+
+// NEW: Helper function to truncate the address for display
+const truncateAddress = (address: string, chars = 4): string => {
+  if (address.length <= chars * 2) {
+    return address;
+  }
+  const start = address.substring(0, chars);
+  const end = address.substring(address.length - chars);
+  return `${start}...${end}`;
+};
+
 
 const Hero: React.FC = () => {
   const contractAddress = "SoL123abc...YourMengContractAddress...xyz789";
   const [copied, setCopied] = useState(false);
+
   const handleCopy = () => {
     navigator.clipboard.writeText(contractAddress);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
   };
 
   return (
     <section
       id="home"
-      className="flex flex-col justify-center items-center text-center p-4 h-185
-       overflow-hidden relative"
+      // CHANGE: Using min-height and responsive padding for flexibility
+      className="flex flex-col justify-center items-center text-center p-4 min-h-[40vh] md:min-h-[100vh] overflow-hidden relative"
     >
-      <div className="flex flex-box justify-between items-center">
-        {/*<div className="flex flex-col">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#543310] max-w-4xl text-left">
-            Meng meng meng meng
-          </h1>
+      <motion.div
+        className="flex flex-col items-center md:gap-2 w-full max-w-lg " // CHANGE: Added max-width
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }} // Set to true for animation to run once
+      >
+        {/* CHANGE: Responsive text size and fixed typo */}
+        <h1 className="mt-50 md:mt-100 text-2xl md:text-3xl text-white font-bold text-shadow-md text-shadow-black">
+          Contract Address
+        </h1>
 
-          <p className="mt-4 text-lg md:text-xl max-w-xl text-left">
-            Forget dogs, it's time for cats to rule the crypto world. $MENG brings the speed of Solana and the power of community!
+        {/* --- CHANGE: Responsive Copy Component --- */}
+        <div 
+          className="bg-white/90 p-2 rounded-lg sm:rounded-full flex flex-col sm:flex-row items-center justify-between gap-2 w-[70%] sm:w-full shadow-2xl"
+        >
+          {/* Using the truncated address for display */}
+          <p className="text-base md:text-lg text-gray-700 font-mono font-bold px-4 sm:py-0">
+            {truncateAddress(contractAddress, 8)}
           </p>
-        </div>
-        {/*<img
-          src={HeroImage}
-          alt="Meng The Cat"
-          className="min-w-50 max-w-100"
-        />
-        <img
-        src={MengSepeda}
-        alt="Kucing Mengintip"
-        className="absolute bottom-0 left-0 w-70 -scale-x-100" 
-      />*/}
-      </div>
 
-      {/*<a
-      <div className="flex flex-wrap justify-center gap-4 mt-8 text-5xl -mb-20">
-        <a
-          href="#howtobuy"
-          className="bg-[#543310] text-white font-bold py-3 px-8 rounded-full hover:bg-[#744717] transition-colors duration-300 "
-        >
-          Buy $MENG Now
-        </a>
-          href="https:
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition-colors duration-300"
-        >
-          Join Telegram
-      </div>
-        </a>*/}
-      <motion.div className="flex flex-col mt-150 gap-2"
-      initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: easeIn }}
-          viewport={{ once: false }}>
-        <div className="text-3xl text-white font-bold text-shadow-md text-shadow-black">Contract Addres</div>
-        <div className="bg-white p-3 rounded-full flex items-center shadow-2xl bottom-0 mb-20">
-          <p className="text-sm md:text-base text-gray-600 font-bold break-all px-4">
-            {contractAddress}
-          </p>
           <button
             onClick={handleCopy}
-            className="bg-[#AF8F6F] text-white p-3 rounded-full hover:bg-[#744717] transition-all"
+            // CHANGE: Added full width on mobile, responsive text size
+            className="bg-[#AF8F6F] text-white p-3 rounded-md sm:rounded-full hover:bg-[#744717] transition-all w-full sm:w-auto flex items-center justify-center gap-2"
           >
-            {copied ? "Copied!" : <FaCopy />}
+            {copied ? "Copied!" : (
+              <>
+                <FaCopy />
+                <span className="sm:hidden">Copy Address</span> {/* Text for mobile */}
+              </>
+            )}
           </button>
         </div>
       </motion.div>

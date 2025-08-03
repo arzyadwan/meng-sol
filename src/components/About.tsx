@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const About: React.FC = () => {
   return (
     <section id="about" className="bg-white">
-      <div className="container mx-auto px-40 flex py-15 flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-10 md:px-40 flex py-15 flex-col md:flex-row items-center gap-12">
         {/* Kolom Gambar */}
         <motion.div
           className="md:w-1/3 flex justify-center"
@@ -17,7 +17,7 @@ const About: React.FC = () => {
           <img
             src={MengAbout}
             alt="Meng the cat playing"
-            className="w-100 h-auto -scale-x-100 shadow-2xl border-4"
+            className="min-w-80 md:w-100 h-auto -scale-x-100 shadow-2xl border-4"
           />
         </motion.div>
 
@@ -27,13 +27,13 @@ const About: React.FC = () => {
           
         >
           <motion.div className="text-3xl md:text-4xl font-bold text-[#543310] mb-4"
-          initial={{opacity:0, scale:0}}
-          whileInView={{opacity:1, scale:1}}
-          transition={{ duration: 1, ease:"easeIn"}}
+          initial={{opacity:0, x:50,}}
+          whileInView={{opacity:1, x:0}}
+          transition={{ duration: 0.5, ease:"easeIn"}}
           viewport={{once: false}}>
-            Whose Meng?
+            Who is Meng?
           </motion.div>
-          <motion.div className="text-2xl text-gray-700"
+          <motion.div className="text-xl md:text-2xl text-gray-700"
           initial={{opacity:0, x:50}}
           whileInView={{opacity:1, x:0}}
           transition={{ duration: 1, ease:"easeIn"}}
@@ -43,10 +43,10 @@ const About: React.FC = () => {
             transactions and high fees. One day, while chasing a digital thread,
             he stumbles upon the Solana blockchain.
           </motion.div>
-          <motion.div className="mt-4 text-2xl text-gray-700"
+          <motion.div className="mt-4 text-xl md:text-2xl text-gray-700"
           initial={{opacity:0, x:50}}
           whileInView={{opacity:1, x:0}}
-          transition={{ duration: 1.5, ease:"easeIn"}}
+          transition={{ duration: 1, ease:"easeIn"}}
           viewport={{once: false}}
           >
             Here, he found paradise: lightning-fast transactions and dust-free

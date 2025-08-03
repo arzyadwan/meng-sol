@@ -20,7 +20,9 @@ const Navbar: React.FC = () => {
           className="text-5xl text-[#543310] flex items-center gap-7"
         >
           <img src={logoMeng} className="w-14 h-auto" />
+          <div className="hidden md:block">
           Meng
+          </div>
         </a>
 
         {/* Desktop Menu */}
